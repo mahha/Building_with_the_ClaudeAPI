@@ -1,11 +1,14 @@
 [
   {
-    "task": "Write a regular expression to validate AWS S3 bucket names. S3 bucket names must be between 3 and 63 characters long, contain only lowercase letters, numbers, hyphens, and periods, start and end with a letter or number, and cannot contain consecutive hyphens or periods."
+    "task": "Parse an AWS S3 bucket name from a full S3 URI (e.g., 's3://my-bucket-name/path/to/object') and extract just the bucket name",
+    "format": "regex"
   },
   {
-    "task": "Write a Python function that takes an AWS CloudWatch log event as input and extracts the timestamp and message fields, returning them as a dictionary with 'timestamp' and 'message' keys."
+    "task": "Create a JSON CloudFormation template snippet that defines an IAM role with a trust policy allowing EC2 instances to assume it",
+    "format": "json"
   },
   {
-    "task": "Create a JSON object that represents an AWS IAM policy allowing a principal to perform s3:GetObject and s3:PutObject actions only on objects with the 'public' tag in any S3 bucket."
+    "task": "Write a Python function that takes an AWS DynamoDB item (dictionary) and converts all empty strings to None values recursively",
+    "format": "python"
   }
 ]
