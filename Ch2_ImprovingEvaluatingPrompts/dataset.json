@@ -1,14 +1,17 @@
 [
   {
-    "task": "Parse an AWS S3 bucket name from a full S3 URI (e.g., 's3://my-bucket-name/path/to/object') and extract just the bucket name",
-    "format": "regex"
+    "task": "Parse an AWS CloudWatch log entry and extract the timestamp, log level, and message. The log format is: '[TIMESTAMP] [LOG_LEVEL] Message content here'",
+    "format": "regex",
+    "solution_criteria": "The regex should correctly capture three groups: timestamp, log level, and message. It should handle various timestamp formats and log levels (DEBUG, INFO, WARN, ERROR)"
   },
   {
-    "task": "Create a JSON CloudFormation template snippet that defines an IAM role with a trust policy allowing EC2 instances to assume it",
-    "format": "json"
+    "task": "Write a Python function that takes an AWS S3 bucket name and returns True if the bucket name follows AWS naming conventions (lowercase, 3-63 characters, no consecutive hyphens)",
+    "format": "python",
+    "solution_criteria": "Function should validate bucket name length (3-63 chars), contain only lowercase letters/numbers/hyphens, not start/end with hyphen, and not have consecutive hyphens. Should return boolean."
   },
   {
-    "task": "Write a Python function that takes an AWS DynamoDB item (dictionary) and converts all empty strings to None values recursively",
-    "format": "python"
+    "task": "Generate a JSON policy document for an AWS IAM role that allows read-only access to a specific S3 bucket named 'my-data-bucket'",
+    "format": "json",
+    "solution_criteria": "JSON should be valid IAM policy syntax with proper Version, Statement array, Effect set to Allow, Action limited to s3:GetObject and s3:ListBucket, and Resource restricted to the specific bucket"
   }
 ]
