@@ -1,0 +1,65 @@
+[
+  {
+    "output": "# Marathon Preparation Nutrition Plan\n\n## Daily Calorie & Macro Target\n- **Daily Calories:** ~2,800-3,200 kcal (depending on training volume)\n- **Carbs:** 55-60% (~385-480g) \u2013 crucial for endurance\n- **Protein:** 15-20% (~105-140g) \u2013 muscle recovery\n- **Fat:** 20-25% (~62-89g) \u2013 hormone balance\n\n---\n\n## Pre-Workout (1-3 hours before)\n**Goal:** Easy digestion + sustained energy\n- Oatmeal with banana and honey\n- Toast with almond butter and jam\n- Rice cakes with low-fat yogurt\n- Avoid high fiber/fat before runs\n\n## During Workout (>90 min runs)\n- Sports drinks (6-8% carbs)\n- Energy gels\n- Banana or energy bars\n- 30-60g carbs/hour\n\n## Post-Workout (within 30-60 min)\n**Goal:** Replenish glycogen + protein synthesis\n- Chocolate milk (ideal carb:protein ratio)\n- Chicken + white rice\n- Pasta with lean meat sauce\n- Protein smoothie with fruit\n\n---\n\n## Daily Carb-Rich Foods\n- Whole grains: oats, brown rice, quinoa, whole wheat bread\n- Fruits: bananas, berries, oranges, dates\n- Vegetables: sweet potatoes, beets, carrots\n- Legumes: lentils, chickpeas\n\n## Protein Sources\n- Chicken, turkey, lean beef\n- Fish (salmon for omega-3s)\n- Eggs, Greek yogurt\n- Cottage cheese\n\n---\n\n## Hydration\n- 3-4 liters daily minimum\n- Electrolyte drinks on long training days\n\nWould you like specific meal plans or recipes?",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "180 cm",
+        "weight": "70 kg",
+        "goal": "Marathon preparation with high carbohydrate intake and optimized pre/post-workout nutrition timing",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan covers one full day with 4-5 meals/snacks appropriately timed around training",
+        "High carbohydrate content (55-65% of total calories) suitable for endurance athlete",
+        "Includes specific pre-workout and post-workout nutrition recommendations",
+        "Compact format with meal timing, portions, and key macronutrients clearly presented"
+      ],
+      "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a professional endurance athlete (marathon runner) requiring high carbohydrate intake and specific pre/post-workout nutrition timing"
+    },
+    "score": 3,
+    "reasoning": "The solution violates all three mandatory requirements. While it provides daily caloric totals and macronutrient percentages, it fails to deliver: (1) meals with exact foods, portions, and timing organized into a complete 1-day plan, (2) a structured schedule showing 4-5 meals/snacks with specific times, and (3) quantified portions necessary to verify the stated macronutrient targets. The output reads as a general nutrition guide rather than a compact, concise 1-day meal plan. A proper solution would show something like: '7:00 AM - Breakfast: 100g oats, 1 banana, 15g honey (X kcal, Y carbs, Z protein)' through the entire day."
+  },
+  {
+    "output": "# Nutrition Plan for Strength & Muscle Gain (Vegetarian)\n\n## Caloric Intake\n- **Estimated TDEE**: ~2,400-2,600 calories/day\n- **Target**: +300-500 calories surplus for muscle gain\n- **Goal**: ~2,800-3,100 calories/day\n\n## Protein Priority (Critical for muscle growth)\n- **Target**: 1.6-2.2g per kg body weight = **130-180g daily**\n- This is higher than average because plant proteins have lower bioavailability\n\n### Top Protein Sources:\n- **Legumes**: Lentils, chickpeas, black beans (15-18g/cup cooked)\n- **Tofu/Tempeh**: 15-19g protein per serving\n- **Greek yogurt**: 15-20g per 150g\n- **Cottage cheese**: 14g per 100g\n- **Eggs**: 6g per egg\n- **Seitan**: 25g per 3oz (highest plant protein)\n- **Nuts/seeds**: Pumpkin seeds, hemp seeds\n- **Protein powder**: Pea, hemp, or blended plant-based\n\n## Macronutrient Split\n| Macro | Grams | Calories |\n|-------|-------|----------|\n| Protein | 150g | 600 |\n| Carbs | 350-400g | 1,400-1,600 |\n| Fat | 75-85g | 675-765 |\n\n## Sample Daily Eating Pattern\n\n**Breakfast**\n- Oatmeal with peanut butter, banana, and protein powder\n\n**Snack**\n- Greek yogurt with granola and berries\n\n**Lunch**\n- Lentil curry with brown rice and vegetables\n\n**Snack**\n- Hummus with whole grain crackers\n\n**Dinner**\n- Tofu stir-fry with quinoa and broccoli\n\n**Optional Evening**\n- Cottage cheese or casein protein shake\n\n## Key Considerations\n\u2713 Combine incomplete proteins (legumes + grains)\n\u2713 Time protein intake around workouts\n\u2713 Include adequate carbs for training energy\n\u2713 Don't neglect healthy fats for hormone production\n\u2713 Track intake for 2-3 weeks to dial in\n\nWould you like specific meal prep ideas or a detailed 7-day plan?",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178",
+        "weight": "82",
+        "goal": "Strength building and muscle gain for weightlifting competition",
+        "restrictions": "Vegetarian"
+      },
+      "solution_criteria": [
+        "Meal plan covers all meals for one full day (breakfast, lunch, dinner, snacks)",
+        "All meals are vegetarian with high-protein alternatives (legumes, tofu, tempeh, dairy, nuts)",
+        "Macros are balanced to support strength training (approximately 1.6-2.2g protein per kg body weight)",
+        "Plan is compact and concise (suitable for quick reference)"
+      ],
+      "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a strength-based athlete (weightlifter) with dietary restrictions (vegetarian) requiring high protein alternatives and macro-balanced meals"
+    },
+    "score": 6,
+    "reasoning": "The solution meets all mandatory requirements by including daily caloric total, macronutrient breakdown, and meals covering all eating occasions. However, it falls short on the critical detail level needed for a practical meal plan: portions are vague (e.g., 'oatmeal with peanut butter' without quantities), meal timing is absent, and there's no verification that the sample meals actually deliver the stated 150g protein target. The plan reads more as a framework/template than a concrete 1-day meal plan with actionable specifics. For a 'compact, concise' plan meant for quick reference, the lack of exact portions and timing significantly undermines usability."
+  },
+  {
+    "output": "# Budget Soccer Nutrition Plan (~$12-14)\n\n## Pre-Training Meal (2-3 hours before)\n- **2 slices whole wheat bread** + peanut butter + banana\n- **1 cup oatmeal** with honey\n- *Why: Sustained carbs + protein for steady energy*\n\n## Pre-Match Snack (30-60 min before)\n- **1 banana** or energy bar\n- **Sports drink or diluted juice** (8 oz)\n- *Why: Quick carbs without feeling heavy*\n\n## During Training\n- **Water** (most important)\n- *Sports drink optional if session >90 min*\n\n## Post-Training Recovery (within 30 min)\n- **Chicken & rice** (budget rotisserie chicken ~$5) OR **eggs + toast**\n- **Apple or orange**\n- *Why: Carbs + protein to rebuild muscle*\n\n## Throughout the Day\n- Lots of **water**\n- **Rice/pasta with beans or canned tuna**\n- **Eggs, oats, seasonal fruits/veggies**\n\n---\n\n## Budget Tips\n\u2713 Buy in bulk (rice, oats, beans)  \n\u2713 Rotisserie chicken is affordable protein  \n\u2713 Seasonal produce is cheapest  \n\u2713 Skip expensive supplements\u2014whole foods work\n\nAt **68 kg**, aim for ~100-120g protein daily and plenty of carbs for soccer performance.",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178 cm",
+        "weight": "68 kg",
+        "goal": "Pre-match energy and recovery for soccer training",
+        "restrictions": "Budget-conscious (under $15 for the day), no allergies"
+      },
+      "solution_criteria": [
+        "Meal plan covers breakfast, lunch, dinner, and 1-2 snacks throughout the day",
+        "All meals use affordable, nutrient-dense foods (whole grains, eggs, beans, seasonal vegetables, fruits)",
+        "Provides adequate carbohydrates and protein to support athletic performance and recovery",
+        "Total estimated cost stays within $15 budget"
+      ],
+      "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a youth athlete (teenage soccer player) with limited budget constraints, requiring nutrient-dense but affordable meal options throughout the day"
+    },
+    "score": 3,
+    "reasoning": "The solution fails to meet all three MANDATORY requirements. While it provides good nutritional guidance and budget awareness, it lacks: (1) a daily caloric total, (2) a macronutrient breakdown with specific numbers, and (3) exact portions and clear meal structure. The plan reads more like general nutrition advice than a concrete 1-day meal plan with specific quantities. For a 68kg soccer athlete, caloric needs (~2,400-2,800 kcal) and macro targets (carbs/protein/fat ratios) are essential for pre-match preparation. The solution also doesn't clearly delineate breakfast, lunch, and dinner as separate meals with exact foods and portions."
+  }
+]
