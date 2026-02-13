@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "180 cm",
+      "weight": "70 kg",
+      "goal": "Marathon preparation with high carbohydrate intake and optimized pre/post-workout nutrition timing",
+      "restrictions": "None"
+    },
+    "solution_criteria": [
+      "Meal plan covers one full day with 4-5 meals/snacks appropriately timed around training",
+      "High carbohydrate content (55-65% of total calories) suitable for endurance athlete",
+      "Includes specific pre-workout and post-workout nutrition recommendations",
+      "Compact format with meal timing, portions, and key macronutrients clearly presented"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a professional endurance athlete (marathon runner) requiring high carbohydrate intake and specific pre/post-workout nutrition timing"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178",
+      "weight": "82",
+      "goal": "Strength building and muscle gain for weightlifting competition",
+      "restrictions": "Vegetarian"
+    },
+    "solution_criteria": [
+      "Meal plan covers all meals for one full day (breakfast, lunch, dinner, snacks)",
+      "All meals are vegetarian with high-protein alternatives (legumes, tofu, tempeh, dairy, nuts)",
+      "Macros are balanced to support strength training (approximately 1.6-2.2g protein per kg body weight)",
+      "Plan is compact and concise (suitable for quick reference)"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a strength-based athlete (weightlifter) with dietary restrictions (vegetarian) requiring high protein alternatives and macro-balanced meals"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "68 kg",
+      "goal": "Pre-match energy and recovery for soccer training",
+      "restrictions": "Budget-conscious (under $15 for the day), no allergies"
+    },
+    "solution_criteria": [
+      "Meal plan covers breakfast, lunch, dinner, and 1-2 snacks throughout the day",
+      "All meals use affordable, nutrient-dense foods (whole grains, eggs, beans, seasonal vegetables, fruits)",
+      "Provides adequate carbohydrates and protein to support athletic performance and recovery",
+      "Total estimated cost stays within $15 budget"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a youth athlete (teenage soccer player) with limited budget constraints, requiring nutrient-dense but affordable meal options throughout the day"
+  }
+]
