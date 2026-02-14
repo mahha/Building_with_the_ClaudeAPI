@@ -1,0 +1,283 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">4</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">2.0 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">0.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a dense neuroscience passage containing overlapping concepts like neuroplasticity, synaptic pruning, and cognitive development to verify accurate extraction of distinct topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent neuroimaging studies have illuminated the mechanisms underlying neuroplasticity during critical developmental windows, particularly how synaptic pruning refines neural circuits essential for cognitive development. During adolescence, the prefrontal cortex undergoes substantial reorganization through activity-dependent pruning of underutilized synapses, while simultaneously strengthening frequently activated neural pathways through long-term potentiation. This pruning process, regulated by glial cells and immune signaling molecules, directly influences executive function maturation and decision-making capacity. Furthermore, environmental enrichment and learning experiences modulate the extent and timing of synaptic elimination, demonstrating bidirectional interactions between experience-dependent plasticity and developmental trajectory. These findings suggest that disruptions in normal pruning patterns may contribute to neurodevelopmental disorders characterized by atypical cognitive development and altered prefrontal function.</td>
+                <td class="criteria">• Extracts all distinct major topics without redundancy<br>• Distinguishes between related but separate concepts (e.g., neuroplasticity vs. synaptic pruning)<br>• Formats output as a valid JSON array of strings</td>
+                <td class="output"><pre># Topics in This Content
+
+1. **Neuroplasticity** - The brain's ability to change and adapt
+
+2. **Neuroimaging Studies** - Research methods used to observe brain structure and function
+
+3. **Synaptic Pruning** - The elimination of underutilized neural connections
+
+4. **Neural Circuit Development** - How brain connections form and organize
+
+5. **Prefrontal Cortex** - The brain region responsible for executive function
+
+6. **Adolescent Brain Development** - Changes occurring during the teenage years
+
+7. **Long-Term Potentiation** - Strengthening of frequently used neural pathways
+
+8. **Glial Cells & Immune Signaling** - Cellular mechanisms that regulate pruning
+
+9. **Executive Function** - Higher-order cognitive abilities like decision-making and planning
+
+10. **Experience-Dependent Plasticity** - How learning and environment shape brain development
+
+11. **Neurodevelopmental Disorders** - Conditions involving atypical cognitive development (implied)
+
+12. **Critical Developmental Windows** - Sensitive periods in brain development
+
+These topics collectively focus on **how the adolescent brain develops through experience-dependent neural refinement and the implications for cognitive health**.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution fails to meet all three mandatory requirements. While the content identifies appropriate topics and demonstrates good understanding of the material, the format is fundamentally incorrect. The task explicitly requires: (1) a JSON array of strings, (2) containing only topic names without extra commentary, and (3) nothing else in the response. The solution instead provides a numbered markdown list with descriptions for each topic, followed by a summary statement. This is a complete format violation despite the quality of topic selection.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a humanities article excerpt discussing historical events, cultural movements, and biographical details to ensure the prompt distinguishes between different topic categories and avoids over-segmentation</td>
+                <td class="prompt-inputs"><strong>content:</strong> The Harlem Renaissance, flourishing during the 1920s and 1930s, represented a transformative period in African American cultural expression. Centered in New York City, this movement encompassed literature, visual arts, music, and theater, with figures like Langston Hughes revolutionizing poetry through vernacular language and jazz rhythms, while Aaron Douglas pioneered a distinctive visual style blending African motifs with modernist aesthetics. Simultaneously, the Great Migration brought unprecedented numbers of Black Americans northward, reshaping urban demographics and fostering intellectual exchange. The movement's emphasis on racial pride and cultural self-determination challenged prevailing stereotypes, though economic constraints of the Great Depression ultimately curtailed its momentum by the late 1930s. Scholars continue debating whether the Renaissance constituted a unified movement or a collection of individual artistic achievements responding to shared historical circumstances.</td>
+                <td class="criteria">• Extracts all major topics without over-segmenting closely related concepts (e.g., 'literature' and 'poetry' should be consolidated rather than listed separately)<br>• Distinguishes between different topic categories: cultural/artistic movements, historical events, biographical figures, and geographical locations<br>• Returns results as a JSON array of strings with no additional metadata or explanations</td>
+                <td class="output"><pre># Topics in This Content
+
+1. **The Harlem Renaissance** - The main subject; a cultural movement during the 1920s-1930s
+
+2. **African American Cultural Expression** - The focus and significance of the movement
+
+3. **Literature** - Specifically mentioned through poets like Langston Hughes and innovations in poetry
+
+4. **Visual Arts** - Including Aaron Douglas's distinctive artistic style
+
+5. **Music** - Jazz and its influence on the arts
+
+6. **Theater** - One of the movement's artistic disciplines
+
+7. **The Great Migration** - The northward movement of Black Americans and its demographic impact
+
+8. **Modernism/Modern Aesthetics** - Artistic style blending African and modernist elements
+
+9. **Racial Pride and Cultural Self-Determination** - Ideological themes of the movement
+
+10. **The Great Depression** - Historical event that affected the movement's trajectory
+
+11. **Vernacular Language** - Linguistic innovation in poetry
+
+12. **Scholarly Debate** - Questions about whether the Renaissance was unified or fragmented
+
+These topics collectively explore a pivotal period in American cultural history and its lasting impact.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution catastrophically fails the mandatory requirements. The task explicitly states 'Response should contain the JSON array and nothing else,' but the provided output includes a markdown header, numbered list with explanatory commentary, and a concluding paragraph. This is a complete format violation. Additionally, while the content identifies relevant topics, it violates the secondary criterion about avoiding over-segmentation by listing 'Vernacular Language' separately from 'Literature' and breaking down ideological themes into overly granular entries. The solution needed to return only: ["Harlem Renaissance", "African American Cultural Expression", "Literature", "Visual Arts", "Music", "Theater", "Great Migration", "Modernism", "Racial Pride", "Great Depression"] or similar consolidated format.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a climate science passage containing technical terminology, methodology descriptions, and policy implications mixed together to assess whether the prompt can separate domain-specific topics from procedural and contextual elements</td>
+                <td class="prompt-inputs"><strong>content:</strong> We employed a multi-scale climate modeling approach to investigate anthropogenic forcing mechanisms on regional precipitation patterns across the Arctic. Our methodology integrated coupled ocean-atmosphere general circulation models with high-resolution dynamical downscaling techniques, utilizing observational data from satellite radiometry and ground-based weather stations collected over the 1980-2023 period. Results indicate that greenhouse gas emissions, particularly CO2 and methane, are responsible for 73% of observed warming trends, with albedo feedback mechanisms amplifying surface temperature changes by 40%. Policy implications suggest that achieving net-zero emissions targets by 2050 requires immediate mitigation strategies including renewable energy deployment, carbon pricing mechanisms, and international climate agreements. Our findings also reveal significant uncertainties in cloud parameterization schemes and ice-sheet dynamics that warrant further investigation through process-based modeling and field observations.</td>
+                <td class="criteria">• Extracts domain-specific topics (e.g., climate modeling, greenhouse gases, albedo feedback) while excluding procedural/methodological descriptions<br>• Separates scientific phenomena from policy recommendations and implementation strategies<br>• Returns output as a valid JSON array of strings containing the identified topics</td>
+                <td class="output"><pre># Topics in This Content
+
+1. **Climate Modeling & Methodology**
+   - Multi-scale climate modeling
+   - Coupled ocean-atmosphere general circulation models
+   - Dynamical downscaling techniques
+
+2. **Arctic Climate & Precipitation**
+   - Regional precipitation patterns
+   - Arctic-specific climate dynamics
+
+3. **Anthropogenic Forcing**
+   - Greenhouse gas emissions (CO2 and methane)
+   - Human-caused climate change mechanisms
+
+4. **Physical Climate Processes**
+   - Albedo feedback mechanisms
+   - Surface temperature changes
+   - Cloud parameterization
+   - Ice-sheet dynamics
+
+5. **Data & Observations**
+   - Satellite radiometry
+   - Ground-based weather stations
+   - Long-term observational records (1980-2023)
+
+6. **Climate Policy & Mitigation**
+   - Net-zero emissions targets
+   - Renewable energy deployment
+   - Carbon pricing mechanisms
+   - International climate agreements
+
+7. **Uncertainty & Future Research**
+   - Climate model uncertainties
+   - Process-based modeling needs
+   - Field observation requirements</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution fails all three mandatory requirements. While the content identifies relevant topics accurately and separates scientific from policy domains well, the format is fundamentally wrong. The task explicitly requires 'a JSON array of strings containing each topic' with 'only a topic without any extra commentary' and 'the JSON array and nothing else.' The solution instead provides a markdown-formatted document with nested categories, bullet points, and organizational headers. A correct response would be a simple JSON array like: ["Climate Modeling", "Multi-scale modeling", "Arctic precipitation patterns", ...]. This is an automatic failure regardless of content quality.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a brief, minimalist passage containing only 2-3 clear topics to verify the prompt handles edge cases and doesn't artificially inflate or hallucinate additional topics that aren't present</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the relationship between circadian rhythm disruption and cognitive performance in shift workers. We analyzed sleep quality metrics across three rotating shift schedules over a 12-week period. Our findings indicate that workers on night shifts exhibited a 23% decline in attention span compared to day shift workers, while melatonin suppression was the primary biological mechanism identified.</td>
+                <td class="criteria">• Extracts exactly 3 topics: circadian rhythm disruption, cognitive performance, and sleep quality<br>• Does not include peripheral concepts like melatonin or shift schedules as separate topics<br>• Returns output as a valid JSON array of strings</td>
+                <td class="output"><pre># Topics in this study:
+
+1. **Circadian Rhythms** - The body's internal biological clock and its disruption
+
+2. **Sleep Quality** - Measurement and analysis of sleep metrics
+
+3. **Cognitive Performance** - Mental functioning, specifically attention span
+
+4. **Shift Work** - Different work schedule types (night shifts vs. day shifts)
+
+5. **Melatonin** - The hormone involved in sleep regulation and its suppression
+
+6. **Occupational Health** - How work schedules affect worker well-being and performance
+
+These topics interconnect to explore how disrupted sleep from shift work impairs mental performance.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution fails all three mandatory requirements. It does not provide a valid JSON array of strings as the sole output. Instead, it presents topics in a formatted markdown/text list with detailed descriptions. Additionally, it violates the secondary criteria by including 6 topics when exactly 3 are specified, and by treating melatonin and shift schedules as separate topics when the criteria explicitly state these should not be included as separate topics. The response should have been simply: ["circadian rhythm disruption", "cognitive performance", "sleep quality"]</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

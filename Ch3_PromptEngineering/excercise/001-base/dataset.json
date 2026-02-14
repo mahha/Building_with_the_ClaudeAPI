@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "Recent neuroimaging studies have illuminated the mechanisms underlying neuroplasticity during critical developmental windows, particularly how synaptic pruning refines neural circuits essential for cognitive development. During adolescence, the prefrontal cortex undergoes substantial reorganization through activity-dependent pruning of underutilized synapses, while simultaneously strengthening frequently activated neural pathways through long-term potentiation. This pruning process, regulated by glial cells and immune signaling molecules, directly influences executive function maturation and decision-making capacity. Furthermore, environmental enrichment and learning experiences modulate the extent and timing of synaptic elimination, demonstrating bidirectional interactions between experience-dependent plasticity and developmental trajectory. These findings suggest that disruptions in normal pruning patterns may contribute to neurodevelopmental disorders characterized by atypical cognitive development and altered prefrontal function."
+    },
+    "solution_criteria": [
+      "Extracts all distinct major topics without redundancy",
+      "Distinguishes between related but separate concepts (e.g., neuroplasticity vs. synaptic pruning)",
+      "Formats output as a valid JSON array of strings"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+    "scenario": "Testing with a dense neuroscience passage containing overlapping concepts like neuroplasticity, synaptic pruning, and cognitive development to verify accurate extraction of distinct topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The Harlem Renaissance, flourishing during the 1920s and 1930s, represented a transformative period in African American cultural expression. Centered in New York City, this movement encompassed literature, visual arts, music, and theater, with figures like Langston Hughes revolutionizing poetry through vernacular language and jazz rhythms, while Aaron Douglas pioneered a distinctive visual style blending African motifs with modernist aesthetics. Simultaneously, the Great Migration brought unprecedented numbers of Black Americans northward, reshaping urban demographics and fostering intellectual exchange. The movement's emphasis on racial pride and cultural self-determination challenged prevailing stereotypes, though economic constraints of the Great Depression ultimately curtailed its momentum by the late 1930s. Scholars continue debating whether the Renaissance constituted a unified movement or a collection of individual artistic achievements responding to shared historical circumstances."
+    },
+    "solution_criteria": [
+      "Extracts all major topics without over-segmenting closely related concepts (e.g., 'literature' and 'poetry' should be consolidated rather than listed separately)",
+      "Distinguishes between different topic categories: cultural/artistic movements, historical events, biographical figures, and geographical locations",
+      "Returns results as a JSON array of strings with no additional metadata or explanations"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+    "scenario": "Testing with a humanities article excerpt discussing historical events, cultural movements, and biographical details to ensure the prompt distinguishes between different topic categories and avoids over-segmentation"
+  },
+  {
+    "prompt_inputs": {
+      "content": "We employed a multi-scale climate modeling approach to investigate anthropogenic forcing mechanisms on regional precipitation patterns across the Arctic. Our methodology integrated coupled ocean-atmosphere general circulation models with high-resolution dynamical downscaling techniques, utilizing observational data from satellite radiometry and ground-based weather stations collected over the 1980-2023 period. Results indicate that greenhouse gas emissions, particularly CO2 and methane, are responsible for 73% of observed warming trends, with albedo feedback mechanisms amplifying surface temperature changes by 40%. Policy implications suggest that achieving net-zero emissions targets by 2050 requires immediate mitigation strategies including renewable energy deployment, carbon pricing mechanisms, and international climate agreements. Our findings also reveal significant uncertainties in cloud parameterization schemes and ice-sheet dynamics that warrant further investigation through process-based modeling and field observations."
+    },
+    "solution_criteria": [
+      "Extracts domain-specific topics (e.g., climate modeling, greenhouse gases, albedo feedback) while excluding procedural/methodological descriptions",
+      "Separates scientific phenomena from policy recommendations and implementation strategies",
+      "Returns output as a valid JSON array of strings containing the identified topics"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+    "scenario": "Testing with a climate science passage containing technical terminology, methodology descriptions, and policy implications mixed together to assess whether the prompt can separate domain-specific topics from procedural and contextual elements"
+  },
+  {
+    "prompt_inputs": {
+      "content": "This study examines the relationship between circadian rhythm disruption and cognitive performance in shift workers. We analyzed sleep quality metrics across three rotating shift schedules over a 12-week period. Our findings indicate that workers on night shifts exhibited a 23% decline in attention span compared to day shift workers, while melatonin suppression was the primary biological mechanism identified."
+    },
+    "solution_criteria": [
+      "Extracts exactly 3 topics: circadian rhythm disruption, cognitive performance, and sleep quality",
+      "Does not include peripheral concepts like melatonin or shift schedules as separate topics",
+      "Returns output as a valid JSON array of strings"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+    "scenario": "Testing with a brief, minimalist passage containing only 2-3 clear topics to verify the prompt handles edge cases and doesn't artificially inflate or hallucinate additional topics that aren't present"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "Recent studies have demonstrated that anthropogenic carbon dioxide emissions drive atmospheric warming through greenhouse gas accumulation, which subsequently triggers cascading effects on aquatic ecosystems. The dissolution of CO2 in seawater lowers pH through carbonic acid formation, a process termed ocean acidification that inhibits calcification rates in pteropods and coral polyps by disrupting carbonate ion availability. Simultaneously, rising water temperatures accelerate metabolic rates in ectothermic organisms while reducing oxygen solubility, creating hypoxic zones where anaerobic bacterial communities proliferate and produce hydrogen sulfide through sulfate reduction. These biogeochemical transformations alter nutrient cycling pathways, particularly affecting nitrogen cycling through denitrification and nitrification processes mediated by microbial consortia, ultimately restructuring phytoplankton community composition and reducing primary productivity in affected marine regions."
+    },
+    "solution_criteria": [
+      "Extracts distinct topics without excessive fragmentation (e.g., 'ocean acidification' and 'carbonate chemistry' should be consolidated)",
+      "Identifies overlapping concepts across disciplines (e.g., recognizes that greenhouse gas effects, pH changes, and metabolic impacts are related but separate topics)",
+      "Includes major scientific concepts mentioned explicitly (carbon dioxide emissions, ocean acidification, oxygen depletion, nutrient cycling, microbial processes)",
+      "Returns output as a valid JSON array of strings"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+    "scenario": "Testing with a dense interdisciplinary passage containing overlapping topics from biology, chemistry, and environmental science to evaluate whether the prompt can identify distinct vs. related concepts"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The nineteenth-century industrial revolution fundamentally restructured European social hierarchies, as the rising merchant class challenged aristocratic authority through accumulation of capital and political influence. Factory systems displaced agrarian populations, creating urban working classes whose labor sustained economic growth while their living conditions deteriorated. This period witnessed the emergence of nationalist ideologies that redefined cultural identity around shared language and territory rather than dynastic loyalty, yet simultaneously reinforced colonial hierarchies as European powers extended dominion over non-Western societies. Intellectuals responded by developing new frameworks\u2014from Marxist analysis of class relations to romantic nationalism\u2014that both critiqued and reinforced the power structures emerging from industrial transformation."
+    },
+    "solution_criteria": [
+      "Extracts explicit topics (industrial revolution, factory systems, nationalism, colonialism)",
+      "Captures implicit themes (power dynamics, social hierarchy, cultural change, class conflict)",
+      "Returns results as a JSON array of strings",
+      "Includes both concrete concepts and abstract analytical themes present in the passage"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+    "scenario": "Testing with a humanities passage on historical analysis containing implicit themes (power dynamics, cultural change) to assess whether the prompt extracts both explicit and implicit topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "We investigate the behavior of Bose-Einstein condensates (BECs) in optical lattices using time-dependent density functional theory (TDDFT) coupled with Monte Carlo simulations. Our analysis focuses on the superfluid-to-Mott insulator transition (SMT) in two-dimensional systems with periodic potentials. We employ laser-induced gauge fields to study artificial magnetism effects, measuring the Berry phase accumulation through interferometric techniques. The system exhibits fractional quantum Hall (FQH) states at specific filling factors, characterized by topological order parameters. We validate predictions using ultracold atom experiments in magneto-optical traps (MOTs), comparing theoretical results from the Hubbard model with experimental observations of entanglement entropy and correlation functions."
+    },
+    "solution_criteria": [
+      "Extracts all domain-specific terms and acronyms as distinct topics (e.g., 'Bose-Einstein condensates', 'optical lattices', 'TDDFT')",
+      "Resolves acronyms to their full forms or recognizes them as topic names",
+      "Includes physics phenomena and physical systems mentioned (e.g., 'superfluid-to-Mott insulator transition', 'fractional quantum Hall states')",
+      "Returns output as a valid JSON array of strings"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+    "scenario": "Testing with a highly technical physics abstract using specialized jargon and acronyms to evaluate accuracy when handling domain-specific terminology and whether the prompt resolves acronyms to full topic names"
+  },
+  {
+    "prompt_inputs": {
+      "content": "This study examines the role of neuroplasticity in cognitive recovery following traumatic brain injury. Neuroplasticity, the brain's ability to reorganize neural pathways, has emerged as a central mechanism in rehabilitation protocols. We investigated how intensive motor training leverages neuroplasticity to restore function in patients with TBI. Our findings demonstrate that neuroplasticity-dependent mechanisms activate within weeks of targeted therapy. Furthermore, we explored how neuroplasticity interacts with pharmacological interventions to enhance recovery outcomes. The data suggest that understanding neuroplasticity at the cellular level is crucial for developing effective rehabilitation strategies. Across all treatment groups, neuroplasticity markers correlated strongly with functional improvements, confirming its fundamental role in the recovery process."
+    },
+    "solution_criteria": [
+      "Returns a JSON array of strings with no duplicate topics",
+      "Identifies the two major topics (neuroplasticity and traumatic brain injury/TBI recovery) without over-generating",
+      "Does not create separate entries for repeated mentions of the same concept"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+    "scenario": "Testing with a passage containing only one or two major topics repeated throughout different sections to verify the prompt doesn't over-generate topics or create duplicates in the JSON array"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "output": "```json\n[\n  \"neuroplasticity\",\n  \"neuroimaging studies\",\n  \"synaptic pruning\",\n  \"neural circuits\",\n  \"cognitive development\",\n  \"adolescence\",\n  \"prefrontal cortex\",\n  \"activity-dependent pruning\",\n  \"long-term potentiation\",\n  \"glial cells\",\n  \"immune signaling molecules\",\n  \"executive function\",\n  \"decision-making\",\n  \"environmental enrichment\",\n  \"learning experiences\",\n  \"experience-dependent plasticity\",\n  \"developmental trajectory\",\n  \"neurodevelopmental disorders\",\n  \"atypical cognitive development\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent neuroimaging studies have illuminated the mechanisms underlying neuroplasticity during critical developmental windows, particularly how synaptic pruning refines neural circuits essential for cognitive development. During adolescence, the prefrontal cortex undergoes substantial reorganization through activity-dependent pruning of underutilized synapses, while simultaneously strengthening frequently activated neural pathways through long-term potentiation. This pruning process, regulated by glial cells and immune signaling molecules, directly influences executive function maturation and decision-making capacity. Furthermore, environmental enrichment and learning experiences modulate the extent and timing of synaptic elimination, demonstrating bidirectional interactions between experience-dependent plasticity and developmental trajectory. These findings suggest that disruptions in normal pruning patterns may contribute to neurodevelopmental disorders characterized by atypical cognitive development and altered prefrontal function."
+      },
+      "solution_criteria": [
+        "Extracts all distinct major topics without redundancy",
+        "Distinguishes between related but separate concepts (e.g., neuroplasticity vs. synaptic pruning)",
+        "Formats output as a valid JSON array of strings"
+      ],
+      "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+      "scenario": "Testing with a dense neuroscience passage containing overlapping concepts like neuroplasticity, synaptic pruning, and cognitive development to verify accurate extraction of distinct topics"
+    },
+    "score": 9,
+    "reasoning": "The solution meets all mandatory requirements: it contains a valid JSON array of strings with topics from the article, each string contains only a topic without commentary, and the response contains only the JSON array. The secondary criteria are largely met\u2014the solution extracts distinct major topics with minimal redundancy and appropriately distinguishes between related concepts. The inclusion of 'activity-dependent pruning' alongside 'synaptic pruning' represents a minor redundancy issue, but this is a borderline case since activity-dependent pruning is a specific mechanism worth noting. Overall, the solution demonstrates strong comprehension of the passage and appropriate topic extraction."
+  },
+  {
+    "output": "```json\n[\n  \"Harlem Renaissance\",\n  \"African American cultural expression\",\n  \"1920s and 1930s\",\n  \"Literature\",\n  \"Visual arts\",\n  \"Music\",\n  \"Theater\",\n  \"Langston Hughes\",\n  \"Poetry\",\n  \"Vernacular language\",\n  \"Jazz\",\n  \"Aaron Douglas\",\n  \"African motifs\",\n  \"Modernist aesthetics\",\n  \"Great Migration\",\n  \"Black Americans\",\n  \"New York City\",\n  \"Urban demographics\",\n  \"Intellectual exchange\",\n  \"Racial pride\",\n  \"Cultural self-determination\",\n  \"Stereotypes\",\n  \"Great Depression\",\n  \"Artistic achievements\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The Harlem Renaissance, flourishing during the 1920s and 1930s, represented a transformative period in African American cultural expression. Centered in New York City, this movement encompassed literature, visual arts, music, and theater, with figures like Langston Hughes revolutionizing poetry through vernacular language and jazz rhythms, while Aaron Douglas pioneered a distinctive visual style blending African motifs with modernist aesthetics. Simultaneously, the Great Migration brought unprecedented numbers of Black Americans northward, reshaping urban demographics and fostering intellectual exchange. The movement's emphasis on racial pride and cultural self-determination challenged prevailing stereotypes, though economic constraints of the Great Depression ultimately curtailed its momentum by the late 1930s. Scholars continue debating whether the Renaissance constituted a unified movement or a collection of individual artistic achievements responding to shared historical circumstances."
+      },
+      "solution_criteria": [
+        "Extracts all major topics without over-segmenting closely related concepts (e.g., 'literature' and 'poetry' should be consolidated rather than listed separately)",
+        "Distinguishes between different topic categories: cultural/artistic movements, historical events, biographical figures, and geographical locations",
+        "Returns results as a JSON array of strings with no additional metadata or explanations"
+      ],
+      "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+      "scenario": "Testing with a humanities article excerpt discussing historical events, cultural movements, and biographical details to ensure the prompt distinguishes between different topic categories and avoids over-segmentation"
+    },
+    "score": 7,
+    "reasoning": "The solution meets all three mandatory requirements: it contains a valid JSON array of strings, each string contains only a topic without extra commentary, and the response is the JSON array alone. However, it violates the secondary criterion about not over-segmenting closely related concepts. The inclusion of both 'Literature' and 'Poetry', 'Music' and 'Jazz', and 'Visual arts' with 'African motifs' represents hierarchical redundancy rather than distinct topics. The solution extracts 24 items when a more consolidated approach following the stated criteria would yield approximately 18-20 core topics. Despite this deficiency in the secondary criteria, the solution is functional and comprehensive."
+  },
+  {
+    "output": "```json\n[\n  \"climate modeling\",\n  \"anthropogenic forcing\",\n  \"precipitation patterns\",\n  \"Arctic\",\n  \"ocean-atmosphere general circulation models\",\n  \"dynamical downscaling\",\n  \"satellite radiometry\",\n  \"ground-based weather stations\",\n  \"greenhouse gas emissions\",\n  \"CO2\",\n  \"methane\",\n  \"warming trends\",\n  \"albedo feedback\",\n  \"surface temperature\",\n  \"net-zero emissions\",\n  \"mitigation strategies\",\n  \"renewable energy\",\n  \"carbon pricing\",\n  \"international climate agreements\",\n  \"cloud parameterization\",\n  \"ice-sheet dynamics\",\n  \"process-based modeling\",\n  \"field observations\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "We employed a multi-scale climate modeling approach to investigate anthropogenic forcing mechanisms on regional precipitation patterns across the Arctic. Our methodology integrated coupled ocean-atmosphere general circulation models with high-resolution dynamical downscaling techniques, utilizing observational data from satellite radiometry and ground-based weather stations collected over the 1980-2023 period. Results indicate that greenhouse gas emissions, particularly CO2 and methane, are responsible for 73% of observed warming trends, with albedo feedback mechanisms amplifying surface temperature changes by 40%. Policy implications suggest that achieving net-zero emissions targets by 2050 requires immediate mitigation strategies including renewable energy deployment, carbon pricing mechanisms, and international climate agreements. Our findings also reveal significant uncertainties in cloud parameterization schemes and ice-sheet dynamics that warrant further investigation through process-based modeling and field observations."
+      },
+      "solution_criteria": [
+        "Extracts domain-specific topics (e.g., climate modeling, greenhouse gases, albedo feedback) while excluding procedural/methodological descriptions",
+        "Separates scientific phenomena from policy recommendations and implementation strategies",
+        "Returns output as a valid JSON array of strings containing the identified topics"
+      ],
+      "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+      "scenario": "Testing with a climate science passage containing technical terminology, methodology descriptions, and policy implications mixed together to assess whether the prompt can separate domain-specific topics from procedural and contextual elements"
+    },
+    "score": 8,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it provides a valid JSON array of strings with clean topic entries and no extraneous commentary. Regarding secondary criteria, the extraction successfully identifies domain-specific topics and separates scientific phenomena from policy recommendations. However, there is some ambiguity in whether certain items (dynamical downscaling, satellite radiometry, ground-based weather stations) should be classified as 'topics' versus 'methodological descriptions.' The criteria state to exclude 'procedural/methodological descriptions,' and these entries lean toward methodology rather than substantive topics. Despite this minor issue, the solution captures the essential topics well and demonstrates strong overall performance against the stated criteria."
+  },
+  {
+    "output": "```json\n[\n  \"circadian rhythm disruption\",\n  \"cognitive performance\",\n  \"shift workers\",\n  \"sleep quality\",\n  \"rotating shift schedules\",\n  \"night shifts\",\n  \"attention span\",\n  \"melatonin suppression\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study examines the relationship between circadian rhythm disruption and cognitive performance in shift workers. We analyzed sleep quality metrics across three rotating shift schedules over a 12-week period. Our findings indicate that workers on night shifts exhibited a 23% decline in attention span compared to day shift workers, while melatonin suppression was the primary biological mechanism identified."
+      },
+      "solution_criteria": [
+        "Extracts exactly 3 topics: circadian rhythm disruption, cognitive performance, and sleep quality",
+        "Does not include peripheral concepts like melatonin or shift schedules as separate topics",
+        "Returns output as a valid JSON array of strings"
+      ],
+      "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings.\n    ",
+      "scenario": "Testing with a brief, minimalist passage containing only 2-3 clear topics to verify the prompt handles edge cases and doesn't artificially inflate or hallucinate additional topics that aren't present"
+    },
+    "score": 4,
+    "reasoning": "The solution violates a critical secondary criterion by extracting 8 topics instead of the required 3. While the output format is correct (valid JSON array of strings with no commentary) and does include the three specified topics, the inclusion of peripheral concepts directly contradicts the stated criteria. The task explicitly requires extracting 'exactly 3 topics' and avoiding peripheral concepts as separate entries. This represents a significant deviation from the specified requirements."
+  }
+]

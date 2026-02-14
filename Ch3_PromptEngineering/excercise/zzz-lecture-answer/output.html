@@ -1,0 +1,275 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">4</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">7.5 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">75.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a dense interdisciplinary passage containing overlapping topics from biology, chemistry, and environmental science to evaluate whether the prompt can identify distinct vs. related concepts</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent studies have demonstrated that anthropogenic carbon dioxide emissions drive atmospheric warming through greenhouse gas accumulation, which subsequently triggers cascading effects on aquatic ecosystems. The dissolution of CO2 in seawater lowers pH through carbonic acid formation, a process termed ocean acidification that inhibits calcification rates in pteropods and coral polyps by disrupting carbonate ion availability. Simultaneously, rising water temperatures accelerate metabolic rates in ectothermic organisms while reducing oxygen solubility, creating hypoxic zones where anaerobic bacterial communities proliferate and produce hydrogen sulfide through sulfate reduction. These biogeochemical transformations alter nutrient cycling pathways, particularly affecting nitrogen cycling through denitrification and nitrification processes mediated by microbial consortia, ultimately restructuring phytoplankton community composition and reducing primary productivity in affected marine regions.</td>
+                <td class="criteria">• Extracts distinct topics without excessive fragmentation (e.g., 'ocean acidification' and 'carbonate chemistry' should be consolidated)<br>• Identifies overlapping concepts across disciplines (e.g., recognizes that greenhouse gas effects, pH changes, and metabolic impacts are related but separate topics)<br>• Includes major scientific concepts mentioned explicitly (carbon dioxide emissions, ocean acidification, oxygen depletion, nutrient cycling, microbial processes)<br>• Returns output as a valid JSON array of strings</td>
+                <td class="output"><pre>```json
+[
+  "anthropogenic carbon dioxide emissions",
+  "atmospheric warming",
+  "greenhouse gas accumulation",
+  "aquatic ecosystems",
+  "ocean acidification",
+  "carbonic acid formation",
+  "calcification rates",
+  "pteropods",
+  "coral polyps",
+  "carbonate ion availability",
+  "water temperature",
+  "metabolic rates",
+  "ectothermic organisms",
+  "oxygen solubility",
+  "hypoxic zones",
+  "anaerobic bacteria",
+  "hydrogen sulfide",
+  "sulfate reduction",
+  "biogeochemical transformations",
+  "nutrient cycling",
+  "nitrogen cycling",
+  "denitrification",
+  "nitrification",
+  "microbial consortia",
+  "phytoplankton community composition",
+  "primary productivity",
+  "marine regions"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. Regarding secondary criteria, it successfully identifies overlapping concepts across disciplines (greenhouse gas effects, pH changes, metabolic impacts as related but separate topics) and includes all major scientific concepts. The extraction demonstrates good judgment in balancing comprehensiveness with avoiding excessive fragmentation. The minor weaknesses around some redundancy in nitrogen cycling topics and omission of 'cascading effects' are relatively insignificant given the overall quality and completeness of the extraction.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a humanities passage on historical analysis containing implicit themes (power dynamics, cultural change) to assess whether the prompt extracts both explicit and implicit topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> The nineteenth-century industrial revolution fundamentally restructured European social hierarchies, as the rising merchant class challenged aristocratic authority through accumulation of capital and political influence. Factory systems displaced agrarian populations, creating urban working classes whose labor sustained economic growth while their living conditions deteriorated. This period witnessed the emergence of nationalist ideologies that redefined cultural identity around shared language and territory rather than dynastic loyalty, yet simultaneously reinforced colonial hierarchies as European powers extended dominion over non-Western societies. Intellectuals responded by developing new frameworks—from Marxist analysis of class relations to romantic nationalism—that both critiqued and reinforced the power structures emerging from industrial transformation.</td>
+                <td class="criteria">• Extracts explicit topics (industrial revolution, factory systems, nationalism, colonialism)<br>• Captures implicit themes (power dynamics, social hierarchy, cultural change, class conflict)<br>• Returns results as a JSON array of strings<br>• Includes both concrete concepts and abstract analytical themes present in the passage</td>
+                <td class="output"><pre>```json
+[
+  "Industrial revolution",
+  "European social hierarchies",
+  "Merchant class",
+  "Aristocratic authority",
+  "Capital accumulation",
+  "Factory systems",
+  "Agrarian populations",
+  "Urban working classes",
+  "Labor",
+  "Economic growth",
+  "Living conditions",
+  "Nationalist ideologies",
+  "Cultural identity",
+  "Shared language",
+  "Territory",
+  "Dynastic loyalty",
+  "Colonial hierarchies",
+  "Non-Western societies",
+  "Marxist analysis",
+  "Class relations",
+  "Romantic nationalism",
+  "Power structures",
+  "Industrial transformation"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings with only topic names and no commentary. It successfully extracts explicit topics and captures implicit themes as required by the secondary criteria. However, the extraction is somewhat over-inclusive with granular sub-concepts that could be consolidated, and it misses a few important implicit themes. The solution demonstrates good understanding of the passage but could be more refined in topic selection and abstraction level.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a highly technical physics abstract using specialized jargon and acronyms to evaluate accuracy when handling domain-specific terminology and whether the prompt resolves acronyms to full topic names</td>
+                <td class="prompt-inputs"><strong>content:</strong> We investigate the behavior of Bose-Einstein condensates (BECs) in optical lattices using time-dependent density functional theory (TDDFT) coupled with Monte Carlo simulations. Our analysis focuses on the superfluid-to-Mott insulator transition (SMT) in two-dimensional systems with periodic potentials. We employ laser-induced gauge fields to study artificial magnetism effects, measuring the Berry phase accumulation through interferometric techniques. The system exhibits fractional quantum Hall (FQH) states at specific filling factors, characterized by topological order parameters. We validate predictions using ultracold atom experiments in magneto-optical traps (MOTs), comparing theoretical results from the Hubbard model with experimental observations of entanglement entropy and correlation functions.</td>
+                <td class="criteria">• Extracts all domain-specific terms and acronyms as distinct topics (e.g., 'Bose-Einstein condensates', 'optical lattices', 'TDDFT')<br>• Resolves acronyms to their full forms or recognizes them as topic names<br>• Includes physics phenomena and physical systems mentioned (e.g., 'superfluid-to-Mott insulator transition', 'fractional quantum Hall states')<br>• Returns output as a valid JSON array of strings</td>
+                <td class="output"><pre>```json
+[
+  "Bose-Einstein condensates",
+  "optical lattices",
+  "time-dependent density functional theory",
+  "Monte Carlo simulations",
+  "superfluid-to-Mott insulator transition",
+  "two-dimensional systems",
+  "periodic potentials",
+  "laser-induced gauge fields",
+  "artificial magnetism",
+  "Berry phase",
+  "interferometric techniques",
+  "fractional quantum Hall states",
+  "filling factors",
+  "topological order parameters",
+  "ultracold atom experiments",
+  "magneto-optical traps",
+  "Hubbard model",
+  "entanglement entropy",
+  "correlation functions"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. It successfully extracts most domain-specific terms and physics phenomena. However, the secondary criteria explicitly state 'Resolves acronyms to their full forms or recognizes them as topic names.' The solution inconsistently handles acronyms - it expands some to full forms but fails to include the acronyms themselves as distinct topics. The text uses 'TDDFT', 'SMT', and 'MOTs' as acronyms, and per the criteria, these should be recognized as topic names and included alongside or instead of their expansions. This represents a notable deficiency in meeting the secondary criteria, though not a mandatory requirement violation.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing only one or two major topics repeated throughout different sections to verify the prompt doesn't over-generate topics or create duplicates in the JSON array</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the role of neuroplasticity in cognitive recovery following traumatic brain injury. Neuroplasticity, the brain's ability to reorganize neural pathways, has emerged as a central mechanism in rehabilitation protocols. We investigated how intensive motor training leverages neuroplasticity to restore function in patients with TBI. Our findings demonstrate that neuroplasticity-dependent mechanisms activate within weeks of targeted therapy. Furthermore, we explored how neuroplasticity interacts with pharmacological interventions to enhance recovery outcomes. The data suggest that understanding neuroplasticity at the cellular level is crucial for developing effective rehabilitation strategies. Across all treatment groups, neuroplasticity markers correlated strongly with functional improvements, confirming its fundamental role in the recovery process.</td>
+                <td class="criteria">• Returns a JSON array of strings with no duplicate topics<br>• Identifies the two major topics (neuroplasticity and traumatic brain injury/TBI recovery) without over-generating<br>• Does not create separate entries for repeated mentions of the same concept</td>
+                <td class="output"><pre>```json
+[
+  "neuroplasticity",
+  "cognitive recovery",
+  "traumatic brain injury",
+  "neural pathways",
+  "rehabilitation protocols",
+  "motor training",
+  "TBI",
+  "pharmacological interventions",
+  "cellular level",
+  "rehabilitation strategies",
+  "neuroplasticity markers",
+  "functional improvements"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-medium">6</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it returns a valid JSON array of strings with no duplicates and contains only topic strings without commentary. However, it violates the secondary criterion of 'identifying the two major topics without over-generating.' The passage clearly centers on neuroplasticity and TBI recovery, but the solution extracts 12 topics when a more rigorous interpretation would consolidate related concepts. For example, 'neural pathways,' 'neuroplasticity markers,' and 'rehabilitation protocols' are all manifestations or applications of the core topic of neuroplasticity. Similarly, 'cognitive recovery,' 'functional improvements,' and 'motor training' are all aspects of TBI recovery. The solution demonstrates good extraction technique but lacks the conceptual consolidation that the secondary criteria explicitly request.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
