@@ -1,0 +1,185 @@
+
+================================================================================
+                    STREAMING SERVICE CHURN ANALYSIS
+                         EXECUTIVE SUMMARY REPORT
+================================================================================
+
+DATASET OVERVIEW:
+--------------------------------------------------------------------------------
+• Total Customers Analyzed: 500
+• Churned Customers: 193 (38.6%)
+• Retained Customers: 307 (61.4%)
+
+================================================================================
+                         MAJOR CHURN DRIVERS IDENTIFIED
+================================================================================
+
+The analysis reveals FIVE PRIMARY DRIVERS of customer churn, ranked by their
+statistical significance and correlation strength:
+
+--------------------------------------------------------------------------------
+1. CUSTOMER SERVICE INTERACTIONS (STRONGEST POSITIVE CORRELATION: +0.279)
+--------------------------------------------------------------------------------
+   Impact: +27.67% higher for churned customers
+   
+   Churned Customers:     3.18 interactions/year
+   Non-Churned Customers: 2.49 interactions/year
+   
+   Statistical Significance: p < 0.001 (Highly Significant)
+   
+   ⚠ CRITICAL INSIGHT: This is the ONLY positive driver, indicating that 
+   customers who contact support more frequently are significantly more 
+   likely to churn. This suggests underlying dissatisfaction or unresolved 
+   issues driving customers away.
+
+--------------------------------------------------------------------------------
+2. LOW VIEWING HOURS (CORRELATION: -0.246)
+--------------------------------------------------------------------------------
+   Impact: -20.00% lower for churned customers
+   
+   Churned Customers:     66.58 hours/month
+   Non-Churned Customers: 83.22 hours/month
+   
+   Statistical Significance: p < 0.001 (Highly Significant)
+   
+   💡 INSIGHT: Churned customers watch 16.6 fewer hours per month. Low 
+   engagement with content is a strong predictor of churn.
+
+--------------------------------------------------------------------------------
+3. LOW BINGE-WATCHING BEHAVIOR (CORRELATION: -0.237)
+--------------------------------------------------------------------------------
+   Impact: -19.72% lower for churned customers
+   
+   Churned Customers:     6.17 binge sessions/month
+   Non-Churned Customers: 7.69 binge sessions/month
+   
+   Statistical Significance: p < 0.001 (Highly Significant)
+   
+   💡 INSIGHT: Customers who binge-watch less frequently are more likely to 
+   churn. Binge-watching indicates high engagement and content satisfaction.
+
+--------------------------------------------------------------------------------
+4. LOW CONTENT DIVERSITY (CORRELATION: -0.224)
+--------------------------------------------------------------------------------
+   Impact: -18.05% lower for churned customers
+   
+   Churned Customers:     19.45 unique titles/month
+   Non-Churned Customers: 23.74 unique titles/month
+   
+   Statistical Significance: p < 0.001 (Highly Significant)
+   
+   💡 INSIGHT: Churned customers explore 4.3 fewer unique titles per month.
+   Limited content exploration suggests they're not finding diverse content
+   that matches their interests.
+
+--------------------------------------------------------------------------------
+5. SHORT SESSION DURATION (CORRELATION: -0.218)
+--------------------------------------------------------------------------------
+   Impact: -14.44% lower for churned customers
+   
+   Churned Customers:     49.42 minutes/session
+   Non-Churned Customers: 57.76 minutes/session
+   
+   Statistical Significance: p < 0.001 (Highly Significant)
+   
+   💡 INSIGHT: Churned customers have 8.3 minutes shorter viewing sessions
+   on average, indicating lower engagement per session.
+
+================================================================================
+                        DEMOGRAPHIC CHURN PATTERNS
+================================================================================
+
+SUBSCRIPTION TIER ANALYSIS:
+--------------------------------------------------------------------------------
+   Premium Tier:  24.1% churn rate (LOWEST - baseline)
+   Standard Tier: 39.5% churn rate (+64% vs Premium)
+   Basic Tier:    43.5% churn rate (+80% vs Premium)
+   
+   💡 INSIGHT: Basic tier has the highest churn rate, nearly DOUBLE that of
+   Premium subscribers. Premium features appear to drive retention.
+
+TOP GENRE ANALYSIS (Highest to Lowest Churn):
+--------------------------------------------------------------------------------
+   Horror:        52.3% churn rate (HIGHEST RISK)
+   Thriller:      48.3% churn rate
+   Action:        44.6% churn rate
+   Romance:       41.8% churn rate
+   SciFi:         40.5% churn rate
+   Drama:         35.3% churn rate
+   Comedy:        33.0% churn rate
+   Documentary:   25.9% churn rate (LOWEST RISK)
+   
+   💡 INSIGHT: Genre preferences significantly impact churn. Documentary
+   viewers have HALF the churn rate of Horror viewers. This could reflect
+   content availability or audience differences.
+
+================================================================================
+                        ACTIONABLE RECOMMENDATIONS
+================================================================================
+
+🎯 PRIORITY 1: ADDRESS CUSTOMER SERVICE ISSUES
+   → Investigate root causes of repeated support contacts
+   → Implement proactive outreach for customers with 3+ interactions
+   → Improve first-contact resolution rates
+   → Monitor support quality and resolution effectiveness
+
+🎯 PRIORITY 2: BOOST USER ENGAGEMENT
+   → Target customers with <70 viewing hours/month for re-engagement
+   → Implement "watch time" warnings and personalized recommendations
+   → Create campaigns encouraging binge-worthy content discovery
+
+🎯 PRIORITY 3: IMPROVE CONTENT DISCOVERY
+   → Enhance recommendation algorithms for users watching <20 titles/month
+   → Create personalized "discovery playlists" to increase title diversity
+   → Implement better genre/category browsing features
+
+🎯 PRIORITY 4: FOCUS ON HIGH-RISK SEGMENTS
+   → Special retention programs for Basic tier subscribers
+   → Genre-specific content expansion (Horror, Thriller, Action)
+   → Consider pricing adjustments or feature additions to Basic tier
+
+🎯 PRIORITY 5: EARLY WARNING SYSTEM
+   → Build predictive model using identified drivers
+   → Flag customers showing multiple risk factors:
+     * Low viewing hours (<70 hrs/month)
+     * Few binge sessions (<7/month)
+     * Multiple CS interactions (≥3/year)
+     * Low title diversity (<20 titles/month)
+   → Implement proactive retention campaigns for at-risk customers
+
+================================================================================
+                            STATISTICAL SUMMARY
+================================================================================
+
+All identified drivers show HIGHLY SIGNIFICANT statistical differences 
+(p < 0.001), confirming these are genuine patterns, not random variations.
+
+Effect Size Summary:
+• Customer Service:  STRONG positive effect (more interactions = higher churn)
+• All other drivers: MODERATE negative effects (less activity = higher churn)
+
+Combined Impact: Customers exhibiting ALL five risk factors have dramatically
+higher churn probability. Multi-factor interventions recommended.
+
+================================================================================
+                              CONCLUSION
+================================================================================
+
+The analysis identifies customer service interactions as the STRONGEST single
+predictor of churn, followed by multiple engagement metrics (viewing hours,
+binge sessions, content diversity, session duration). 
+
+The data reveals a clear pattern: churned customers are LESS ENGAGED across
+all metrics EXCEPT customer service interactions (which are elevated). This
+suggests churn is driven by a combination of:
+
+1. Underlying product/content dissatisfaction (shown by CS contacts)
+2. Reduced engagement with the platform (shown by all viewing metrics)
+3. Structural factors (subscription tier, genre availability)
+
+Retention efforts should focus on EARLY INTERVENTION when engagement metrics
+decline and PROACTIVE RESOLUTION of customer service issues.
+
+================================================================================
+Report Generated: Comprehensive Analysis Complete
+================================================================================

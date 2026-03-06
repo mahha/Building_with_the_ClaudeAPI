@@ -1,0 +1,7 @@
+Feature,Churned Mean,Churned Std,Not Churned Mean,Not Churned Std,Difference,Diff %,Correlation,P-value,Significant
+CustomerServiceInteractions,3.18,1.20,2.49,1.13,+0.69,+27.67%,0.2794,0.000000,***
+TotalViewingHours,66.58,31.24,83.22,32.35,-16.64,-20.00%,-0.2464,0.000000,***
+BingeWatchingSessions,6.17,2.91,7.69,3.11,-1.52,-19.72%,-0.2368,0.000000,***
+NumberOfUniqueTitlesWatched,19.45,8.97,23.74,9.19,-4.29,-18.05%,-0.2239,0.000000,***
+AverageSessionDuration (min),49.42,17.67,57.76,18.57,-8.34,-14.44%,-0.2178,0.000001,***
+MonthlyCost,11.18,3.32,12.11,3.73,-0.93,-7.71%,-0.1263,0.004680,**
