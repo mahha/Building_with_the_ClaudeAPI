@@ -1,4 +1,6 @@
 import os
+import shutil
+import tempfile
 import pytest
 from tools.document import binary_document_to_markdown, document_path_to_markdown
 
@@ -68,3 +70,46 @@ class TestDocumentPathToMarkdown:
         assert len(result) > 0
         # Check for typical markdown formatting - this will depend on your actual test file
         assert "#" in result or "-" in result or "*" in result
+
+    def test_file_not_found(self):
+        """Non-existent path raises FileNotFoundError."""
+        with pytest.raises(FileNotFoundError):
+            document_path_to_markdown("/nonexistent/path/to/file.pdf")
+
+    def test_unsupported_extension(self):
+        """Unsupported file extension returns a string (markitdown does not raise)."""
+        with tempfile.NamedTemporaryFile(suffix=".xyz", delete=False) as f:
+            f.write(b"some content")
+            tmp_path = f.name
+        try:
+            result = document_path_to_markdown(tmp_path)
+            assert isinstance(result, str)
+        finally:
+            os.unlink(tmp_path)
+
+    def test_path_with_spaces(self):
+        """File path containing spaces is handled correctly."""
+        tmp_dir = tempfile.mkdtemp()
+        spaced_path = os.path.join(tmp_dir, "my document file.docx")
+        try:
+            shutil.copy(self.DOCX_FIXTURE, spaced_path)
+            result = document_path_to_markdown(spaced_path)
+            assert isinstance(result, str)
+            assert len(result) > 0
+        finally:
+            shutil.rmtree(tmp_dir)
+
+    def test_docx_contains_markdown_headings(self):
+        """DOCX with headings produces markdown heading syntax."""
+        result = document_path_to_markdown(self.DOCX_FIXTURE)
+        assert "#" in result
+
+    def test_pdf_returns_string(self):
+        """PDF conversion returns a str, not bytes or None."""
+        result = document_path_to_markdown(self.PDF_FIXTURE)
+        assert isinstance(result, str)
+
+    def test_docx_returns_string(self):
+        """DOCX conversion returns a str, not bytes or None."""
+        result = document_path_to_markdown(self.DOCX_FIXTURE)
+        assert isinstance(result, str)
